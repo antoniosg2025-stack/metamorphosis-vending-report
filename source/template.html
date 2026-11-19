@@ -92,7 +92,7 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
   <div class="kpis">
    <div class="kpi"><div class="k">Sales since install</div><div class="v num">__TOTAL__</div><div class="s">__TX__ purchases · __MONTHS__ full months</div></div>
    <div class="kpi"><div class="k">Earned by Metamorphosis</div><div class="v num">__COMM__</div><div class="s">10% of sales · __PAID__ on July 3 + __DUE__ on November 18</div></div>
-   <div class="kpi"><div class="k">Invested by Metamorphosis</div><div class="v num">$0</div><div class="s">Buenavyda has put in ≈__INVK__</div></div>
+   <div class="kpi"><div class="k">Invested by Metamorphosis</div><div class="v num">$0</div><div class="s">≈__INVK__ of value added by Buenavyda</div></div>
    <div class="kpi"><div class="k">Service visits (est.)</div><div class="v num">__VISITS__</div><div class="s">__HOURS__ hours of our time, plus fuel</div></div>
   </div>
  </div>
@@ -144,8 +144,8 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
  <p class="lede read">A vending machine looks simple from the outside. Behind it there is buying, driving, restocking, cleaning, handling cash, fixing jams and failed card payments, and a daily review of the sales. We do all of it, and we use AI to plan every refill from the machine's own data.</p>
  <div class="grid3" id="workCards"></div>
  <div class="panel"><div id="cWork" class="chart"></div><p class="note">__WORKNOTE__</p></div>
- <h3 style="font-size:24px;margin-top:40px">What Buenavyda has put in so far</h3>
- <p class="lede read" style="font-size:17px">Everything below is paid by Buenavyda. Metamorphosis has paid nothing and has received every commission.</p>
+ <h3 style="font-size:24px;margin-top:40px">The value Buenavyda adds to Metamorphosis</h3>
+ <p class="lede read" style="font-size:17px">Everything below comes to Metamorphosis at no cost: the equipment, the products, the work and the travel. Your team and clients get a full-service vending machine, and Metamorphosis earns a commission on top.</p>
  <div class="panel"><table class="t" id="tInv"></table><p class="note">__INVNOTE__</p></div>
  <div class="panel"><p class="note" style="font-size:15px;color:var(--ink);margin:4px 6px 0"><b>Metamorphosis earnings, growing every month</b> · cumulative 10% commission, with no cost to you</p><div id="cInv" class="chart" style="height:320px"></div></div>
  <div class="finding"><div class="n">3</div><p>__F3__</p></div>
@@ -232,7 +232,7 @@ if(D.products.length){seg("segProd",prod);prod("prod");}
 (function(){const w=document.getElementById("workCards");w.innerHTML=D.work.map(c=>`<div class="tb"><div class="k">${c.k}</div><div class="big ${c.cls||""} num">${c.v}</div><p>${c.p}</p></div>`).join("");
  Plotly.newPlot("cWork",[{type:"bar",x:D.visits.map(v=>v.month),y:D.visits.map(v=>v.n*D.hpv),marker:{color:C.amber},text:D.visits.map(v=>v.n+" visits · "+(v.n*D.hpv)+" h"),textposition:"outside",cliponaxis:false,hovertemplate:"%{x}: %{y} hours<extra></extra>"}],base({yaxis:{gridcolor:C.line,title:{text:"Hours of Buenavyda time"}}}),cfg)})();
 
-(function(){const t=document.getElementById("tInv");let h='<tr><th>Item</th><th class="r">Amount</th><th>How we got it</th></tr>';D.inv.forEach(r=>{h+=`<tr><td>${r.item}</td><td class="r num"><b>${fmt$(r.amt)}</b></td><td>${r.how}</td></tr>`});h+=`<tr><td><b>Total invested by Buenavyda</b></td><td class="r num"><b>${fmt$(D.invTotal)}</b></td><td></td></tr>`;t.innerHTML=h;
+(function(){const t=document.getElementById("tInv");let h='<tr><th>What Metamorphosis receives</th><th class="r">Value</th><th>How we valued it</th></tr>';D.inv.forEach(r=>{h+=`<tr><td>${r.item}</td><td class="r num"><b>${fmt$(r.amt)}</b></td><td>${r.how}</td></tr>`});h+=`<tr><td><b>Total value added, at no cost to Metamorphosis</b></td><td class="r num"><b>${fmt$(D.invTotal)}</b></td><td></td></tr>`;t.innerHTML=h;
 const cm=[];let acc=0;D.months.forEach(m=>{acc+=m.total*0.10;cm.push(+acc.toFixed(2))});
 Plotly.newPlot("cInv",[{type:"scatter",mode:"lines+markers+text",x:D.months.map(m=>m.label),y:cm,line:{color:C.green,width:4,shape:"spline"},marker:{size:9,color:C.green},fill:"tozeroy",fillcolor:"rgba(18,122,90,.12)",text:cm.map((v,i)=>i==cm.length-1?fmt$2(D.earned):""),textposition:"top left",textfont:{size:16,color:C.green},hovertemplate:"%{x}: %{y:$,.2f} earned so far<extra></extra>"}],base({margin:{l:60,r:40,t:40,b:48},yaxis:{gridcolor:C.line,tickprefix:"$",range:[0,D.earned*1.2]}}),cfg)})();
 if(D.video){vid.src=D.video;vidWrap.hidden=false}
