@@ -25,13 +25,13 @@ work=[
  dict(k="Service visits since install",v=f"≈{nv}",p="Up to twice a week from March to June while we stabilised the machine and its product mix, then about once a week."),
  dict(k="Hours per visit",v=f"{HPV:g} h",p="2 h driving (about one hour each way from our Cambridge warehouse), 1.5 h on site, and 4 h buying stock, planning the refill and checking sales."),
  dict(k="Our time so far",v=f"≈{hrs:,.0f} h",p="All of it paid by Buenavyda, plus fuel on every trip. None of it is deducted from your 10%."),
- dict(k="Machine, delivered and installed",v="$6,201.50",p="VCM 3000 combo machine, Nayax card reader, coin mechanism, bill acceptor, $269 of coins for change, delivery to Delhi and 13% HST."),
+ dict(k="Machine, delivered and installed",v="+$10,000",p="Combo vending machine, Nayax card reader, coin mechanism, bill acceptor, $269 of coins for change, delivery to Delhi and 13% HST. All amounts in CAD."),
  dict(k="Requests answered",v="3",p="Gum instead of juice, Dr Pepper back, and Fanta options, each changed at the next visit."),
 ]
 labour=hrs*25*(1+0.0595+0.02282+0.04)*1.05
 km=nv*200; drive=5000*0.73+(km-5000)*0.67
-inv=[dict(item="Vending machine, card reader, coin and bill units, delivery, HST",amt=5932.50,how="Feel Good Snacks invoice 2026-010139"),
- dict(item="Coins loaded for change",amt=269.00,how="Same invoice"),
+inv=[dict(item="Vending machine, card reader, coin and bill units, delivery, HST",amt=9731.00,how="Supplier invoices"),
+ dict(item="Coins loaded for change",amt=269.00,how="Supplier invoices"),
  dict(item="First full load of products",amt=255,how="≈208 items at our cost (about half the selling price)"),
  dict(item=f"Our time: ≈{hrs:,.0f} hours",amt=round(labour),how="$25/h plus employer CPP 5.95%, EI 2.28%, 4% vacation pay and ≈5% payroll and accounting"),
  dict(item=f"Driving: ≈{km:,} km",amt=round(drive),how=f"{nv} round trips of ≈200 km at the 2026 CRA rate (73¢ first 5,000 km, 67¢ after)")]
@@ -45,7 +45,7 @@ D=dict(video=VIDEO,inv=inv,invTotal=invT,earned=c1+c2,months=months,comm=comm,wo
 html=open("template.html").read()
 rep={"__ASOF__":"November 18, 2026","__START__":"March 25, 2026",
  "__TOTAL__":"$"+f"{total:,.0f}","__TX__":"thousands of","__MONTHS__":"7",
- "__COMM__":"$"+f"{c1+c2:,.2f}","__PAID__":"$"+f"{c1:,.2f}","__DUE__":"$"+f"{c2:,.2f}","__INVK__":f"${invT:,.0f}","__INVNOTE__":"Machine figures are from the supplier invoice. Time and driving are what the same work would cost a business that hired someone to do it. Restocking after the first load is paid from sales, so it is not counted twice.","__F3__":f"<b>Buenavyda has put in about ${invT:,.0f}</b> in equipment, stock, time and driving. Metamorphosis has put in $0 and has earned ${c1+c2:,.2f}: 10% of every sale with 0% of the cost or the risk.","__VIDCAP__":"A walk-through of the proposed essentials corner at Metamorphosis Delhi.","__VISITS__":f"≈{nv}","__HOURS__":f"≈{hrs:,.0f}",
+ "__COMM__":"$"+f"{c1+c2:,.2f}","__PAID__":"$"+f"{c1:,.2f}","__DUE__":"$"+f"{c2:,.2f}","__INVK__":f"${invT:,.0f}","__INVNOTE__":"Machine figures are from the supplier invoices. Time and driving are what the same work would cost a business that hired someone to do it. Restocking after the first load is paid from sales, so it is not counted twice.","__F3__":f"<b>Buenavyda has put in about ${invT:,.0f}</b> in equipment, stock, time and driving. Metamorphosis has put in $0 and has earned ${c1+c2:,.2f}: 10% of every sale with 0% of the cost or the risk.","__VIDCAP__":"A walk-through of the proposed essentials corner at Metamorphosis Delhi.","__VISITS__":f"≈{nv}","__HOURS__":f"≈{hrs:,.0f}",
  "__MONTHNOTE__":"*March counts from installation on March 25. Card and cash split shown from July. Source: Nayax; March–June from Buenavyda's monthly records.",
  "__F1__":f"<b>${total:,.0f} sold in just over seven months</b>, with the best month in May (${max(full):,.0f}). Most customers pay cash, so the machine accepts both and we collect and count the cash on every visit.",
  "__F2__":"<b>Most purchases happen in the evening, between 8 and 11 pm</b>, with a smaller peak around lunch. We keep the machine full before evenings and weekends.","__HEATNOTE__":"Sample: November 13 to 17, 2026 (43 purchases). Times are Toronto time.","__PERIOD__":"October 11 to November 17: 319 units",
