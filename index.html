@@ -104,6 +104,12 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
 .social a:hover{border-color:#FFD43B;color:#FFD43B}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:18px}.fgrid h4{margin:0;color:#fff;font:600 14px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 @media (max-width:860px){.aiband .wrap,.vidrow,.fgrid{grid-template-columns:1fr}#aiCanvas{height:340px}.phone{margin:0 auto}}
+.valuesum{display:grid;grid-template-columns:1fr auto 1fr auto 1.2fr;gap:12px;align-items:center;margin-top:26px}
+.vs{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}.vs .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.vs .v{font-family:var(--display);font-weight:800;font-size:36px;color:var(--green);line-height:1.1;margin-top:4px}.vs p{margin:4px 0 0;font-size:14.5px;color:#33445C}
+.vs.plus{background:none;border:0;padding:0;font-family:var(--display);font-weight:800;font-size:34px;color:var(--muted);text-align:center}
+.vs.total{background:var(--night);border-color:var(--night)}.vs.total .k{color:var(--gold)}.vs.total .v{color:#fff;font-size:44px}.vs.total p{color:#C9D5E4}
+@media (max-width:860px){.valuesum{grid-template-columns:1fr}.vs.plus{font-size:26px;line-height:1}}
 @media (max-width:760px){.compare,.shelf{grid-template-columns:1fr}.chart{height:300px}}
 </style>
 </head>
@@ -118,7 +124,7 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
   <div class="kpis">
    <div class="kpi"><div class="k">Sales since install</div><div class="v num">$7,381</div><div class="s">March 25 to October 31 · 7 full months</div></div>
    <div class="kpi"><div class="k">Earned by Metamorphosis</div><div class="v num">$738.08</div><div class="s">10% of sales · $371.20 on July 3 + $366.88 on November 18</div></div>
-   <div class="kpi"><div class="k">Invested by Metamorphosis</div><div class="v num">$0</div><div class="s">≈$27,593 of value added by Buenavyda</div></div>
+   <div class="kpi"><div class="k">Invested by Metamorphosis</div><div class="v num">$0</div><div class="s">≈$28,331 of value received, commissions included</div></div>
    <div class="kpi"><div class="k">Service visits (est.)</div><div class="v num">≈48</div><div class="s">≈360 hours of our time, plus fuel</div></div>
   </div>
  </div>
@@ -190,22 +196,21 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
 
 <section id="why" class="white"><div class="wrap">
  <p class="sec-tag">06 · Why keep Buenavyda operating</p>
- <h2>Owning a machine vs. having us run it</h2>
- <div class="compare">
-  <div class="col them"><h3>If Metamorphosis bought its own machines</h3><ul>
-   <li>Pays for the machine, card reader and monthly payment-system fees up front.</li>
-   <li>Buys and stores the stock, and absorbs expired or damaged products.</li>
-   <li>Assigns staff to refill, clean, count cash and deal with jams and refunds.</li>
-   <li>Keeps the full sales, but also every cost and every hour.</li>
-  </ul></div>
-  <div class="col us"><h3>With Buenavyda (today)</h3><ul>
+ <h2>What Metamorphosis receives from Buenavyda</h2>
+ <div class="valuesum">
+  <div class="vs"><div class="k">Value added by Buenavyda</div><div class="v num">$27,593</div><p>Machine, coins, first product load, service hours and travel</p></div>
+  <div class="vs plus" aria-hidden="true">+</div>
+  <div class="vs"><div class="k">Commissions paid</div><div class="v num">$738.08</div><p>10% of every sale since March</p></div>
+  <div class="vs plus" aria-hidden="true">=</div>
+  <div class="vs total"><div class="k">Total value for Metamorphosis</div><div class="v num">$28,331</div><p>with $0 invested by Metamorphosis</p></div>
+ </div>
+ <div class="col us" style="margin-top:18px"><h3>With Buenavyda</h3><ul>
    <li><b>$0 invested</b>, no staff time, no stock risk.</li>
-   <li>10% of every sale, paid quarterly, with this live report to check it.</li>
+   <li>10% of every sale, with this live report to check it.</li>
    <li>Products chosen from real sales data and from your team's requests.</li>
    <li>AI-planned refills: each visit brings exactly what is missing.</li>
    <li>We add new services at your clinics only when they make sense for you.</li>
-  </ul></div>
- </div>
+ </ul></div>
 </div></section>
 
 <section id="grabgo" class="whatif"><div class="wrap">
