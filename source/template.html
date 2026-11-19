@@ -79,12 +79,38 @@ table.t td.r,table.t th.r{text-align:right}
 .st .n{font-family:var(--display);font-weight:800;font-size:24px;color:var(--green)}
 .st p{margin:0;font-size:15.5px;color:var(--ink)}.st b{color:var(--ink)}
 footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}footer a{color:#E6EEF6}
+.brandbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.brandbar .tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7FA3C8}
+.brands{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brands img{display:block;height:44px;width:auto}.brands img.ac{height:38px}
+.brands .site{font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;border:1px solid #3FD16B;border-radius:999px;padding:8px 14px}
+.brands .site:hover{background:#3FD16B;color:#0B0D10}
+.aiband{background:#070B12;color:#E6EEF6;border-top:1px solid #1C2B42;padding:44px 0;overflow:hidden}
+.aiband .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center}
+.aiband .big{font-family:var(--display);font-weight:800;font-size:clamp(46px,8vw,96px);line-height:.95;letter-spacing:-.03em;margin:0;background:linear-gradient(90deg,#4C8DFF,#3FD16B 45%,#FFD43B 70%,#FF3B5C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.aiband p{font-size:18px;color:#B9C7D8;margin:16px 0 0;max-width:46ch}.aiband p b{color:#fff}
+.aiband .cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-weight:600;color:#0B0D10;background:#FFD43B;border-radius:999px;padding:11px 20px;text-decoration:none}
+.aiband .cta:hover{background:#fff}
+#aiCanvas{width:100%;height:420px;display:block}
+.vidrow{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:28px}
+.phone{position:relative;width:min(320px,82vw);aspect-ratio:9/16;border-radius:34px;padding:10px;background:#05070B;border:1px solid #2F4A6E;box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 0 6px #0B1729}
+.phone video{width:100%;height:100%;border-radius:26px;display:block;background:#000;object-fit:cover}
+.playbtn{position:absolute;inset:10px;border-radius:26px;border:0;cursor:pointer;background:rgba(5,7,11,.25);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#fff;font:600 15px var(--body)}
+.playbtn span.c{width:78px;height:78px;border-radius:50%;background:#FFD43B;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(255,212,59,.25)}
+.playbtn span.l{background:rgba(5,7,11,.75);border-radius:999px;padding:6px 14px}
+.vidtext h3{font-size:26px;color:#fff;margin:0 0 12px}.vidtext ul{margin:0;padding-left:20px;color:#C9D5E4;font-size:16.5px}.vidtext li{margin-bottom:8px}.vidtext li b{color:#fff}
+.social{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.social a{font-family:var(--mono);font-size:13px;color:#E6EEF6;text-decoration:none;border:1px solid #2F4A6E;border-radius:999px;padding:6px 12px}
+.social a:hover{border-color:#FFD43B;color:#FFD43B}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:18px}.fgrid h4{margin:0;color:#fff;font:600 14px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:860px){.aiband .wrap,.vidrow,.fgrid{grid-template-columns:1fr}#aiCanvas{height:340px}.phone{margin:0 auto}}
 @media (max-width:760px){.compare,.shelf{grid-template-columns:1fr}.chart{height:300px}}
 </style>
 </head>
 <body>
 <header class="cover" id="top">
  <div class="wrap">
+  <div class="brandbar"><span class="tag">AI-oriented operations</span><div class="brands"><a href="https://buenavyda.com/grab-and-go" aria-label="Buenavyda GrabGo"><img src="assets/buenavyda-grabgo.svg" alt="Buenavyda GrabGo"></a><a href="https://www.youtube.com/@analystchannel" aria-label="Analyst Channel"><img class="ac" src="assets/analyst-channel.png" alt="Analyst Channel"></a><a class="site" href="https://buenavyda.com">buenavyda.com ↗</a></div></div>
   <p class="eyebrow">Prepared for the Metamorphosis Centre for Change team · __ASOF__</p>
   <h1>Our vending machine at your clinic: our investment, your 10%.</h1>
   <p class="q">On <b>__START__</b> Buenavyda bought and installed a vending machine at Metamorphosis Delhi, and we have stocked, cleaned and managed it ever since. <b>Metamorphosis has invested nothing and earns 10% of every sale.</b> This page shows the real numbers from the machine's payment system and the work behind them.</p>
@@ -97,8 +123,18 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
   </div>
  </div>
 </header>
+<section class="aiband" aria-label="AI-oriented">
+ <div class="wrap">
+  <div>
+   <h2 class="big">AI&#8209;oriented.</h2>
+   <p>Buenavyda runs on its own AI tools. <b>The machine's sales data turns into restock lists, routes and reports like this one</b>, so each visit brings exactly what sells. GrabGo, our newest service, takes the same AI to a simple shelf that people pay for from their phone.</p>
+   <a class="cta" href="#grabgo-video">▶ Watch the 50-second video</a>
+  </div>
+  <canvas id="aiCanvas" role="img" aria-label="Animated diagram: AI at the centre, connected to Buenavyda GrabGo, Analyst Channel, the vending machine, sales data, restock lists and live reports, with sparks of information moving between them."></canvas>
+ </div>
+</section>
 <nav class="topnav" aria-label="Sections"><div class="wrap">
- <a href="#sales">Sales</a><a href="#when">When people buy</a><a href="#what">What they buy</a><a href="#earnings">Your earnings</a><a href="#work">Our work</a><a href="#why">Why us</a><a href="#grabgo">Next: GrabGo corner</a>
+ <a href="#sales">Sales</a><a href="#when">When people buy</a><a href="#what">What they buy</a><a href="#earnings">Your earnings</a><a href="#work">Our work</a><a href="#why">Why us</a><a href="#grabgo">Next: GrabGo corner</a><a href="#grabgo-video">Video</a>
 </div></nav>
 
 <section id="sales"><div class="wrap">
@@ -176,6 +212,19 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
  <p class="sec-tag">07 · The next step</p>
  <h2>An essentials corner, paid from the phone</h2>
  <p class="lede read">Your team told us that clients and staff often leave to buy basics at the nearby store. Buenavyda GrabGo turns a small shelf into a self-service corner: toothbrushes, toothpaste, soap, paper products and other essentials. People take what they need, send a photo by text message, and pay with their card or Apple Pay / Google Pay. Like the vending machine, we stock it, run it and pay Metamorphosis a commission, with no investment from you.</p>
+ <div class="vidrow" id="grabgo-video">
+  <div class="phone"><video id="gv" src="assets/grabgo-corner.mp4" poster="assets/grabgo-corner-poster.jpg" preload="none" playsinline></video><button class="playbtn" id="gvPlay" aria-label="Play the GrabGo video"><span class="c"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#0B0D10"/></svg></span><span class="l">Watch · 52 s · sound on</span></button></div>
+  <div class="vidtext">
+   <h3>See it at your clinic</h3>
+   <ul>
+    <li><b>The problem:</b> someone arrives without the basics, forgets a toothbrush or runs out of shampoo. It happens every day.</li>
+    <li><b>The idea:</b> a small, elegant shelf next to the snack machine. It fits in a corner.</li>
+    <li><b>How people pay:</b> grab it, snap a photo, text it, and pay with a secure Stripe link: Apple Pay, Google Pay or any credit card.</li>
+    <li><b>Discreet:</b> personal items stay in closed boxes.</li>
+    <li><b>We stock everything:</b> shampoo, deodorant, soap, toothbrushes, toothpaste. You tell us what your residents need most.</li>
+   </ul>
+  </div>
+ </div>
  <div class="wpanel">
   <div class="control"><label for="rIt">Essentials bought per week at the clinic</label><output id="oIt" class="num">5</output><input id="rIt" type="range" min="1" max="15" value="5"></div>
   <div class="control"><label for="rPr">Average price per item</label><output id="oPr" class="num">$4.00</output><input id="rPr" type="range" min="2" max="10" step="0.5" value="4"></div>
@@ -186,19 +235,22 @@ footer{background:var(--night);color:#9DB0C7;padding:30px 0;font-size:14px}foote
   </div>
   <p class="note" style="color:#9DB0C7">This is a calculator, not a forecast: move the sliders to your own estimate. It assumes the same 10% as the vending machine; final terms to agree. "Both services" adds the vending machine's average monthly commission so far.</p>
  </div>
- <div id="vidWrap" style="margin-top:26px" hidden><div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid #27426A"><iframe id="vid" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="note" style="color:#9DB0C7">__VIDCAP__</p></div>
  <div class="shelf">
   <div class="steps">
-   <div class="st"><div class="n">1</div><p><b>We place a small shelf</b> near reception (not in the lunch room), with a sign and QR code.</p></div>
+   <div class="st"><div class="n">1</div><p><b>We place a small shelf</b> next to the snack machine, with a sign and QR code.</p></div>
    <div class="st"><div class="n">2</div><p><b>People take an item and send a photo</b> by text message. Our AI recognises it and sends a payment link.</p></div>
    <div class="st"><div class="n">3</div><p><b>We restock from the sales data</b>, the same way we run the vending machine.</p></div>
    <div class="st"><div class="n">4</div><p><b>You get a commission and a live report</b> like this one.</p></div>
   </div>
-  <div class="tb" style="background:#13243D;border-color:#27426A;color:#E3EAF3"><div class="k" style="color:var(--gold)">Products your team asked for</div><h3 style="color:#fff">Basics people leave to buy</h3><p style="color:#C9D5E4">Your staff mentioned toothbrushes, soap and paper products. We would start with those and add whatever your team tells us clients need. Tobacco and vape products are not allowed in Ontario vending or self-service, so they are not part of it.</p></div>
+  <div class="tb" style="background:#13243D;border-color:#27426A;color:#E3EAF3"><div class="k" style="color:var(--gold)">Products your team asked for</div><h3 style="color:#fff">Basics people leave to buy</h3><p style="color:#C9D5E4">Your staff mentioned toothbrushes, soap and paper products. We would start with shampoo, deodorant, soap, toothbrushes, toothpaste and paper products, personal items in closed boxes, and add whatever your team tells us residents need. Tobacco and vape products are not allowed in Ontario vending or self-service, so they are not part of it.</p></div>
  </div>
 </div></section>
 
 <footer><div class="wrap">
+ <div class="fgrid">
+  <div><h4>Buenavyda GrabGo</h4><div class="social"><a href="https://buenavyda.com/grab-and-go">buenavyda.com/grab-and-go</a><a href="sms:+14375634722">Text +1 437-563-GRAB</a><a href="https://wa.me/14375634722">WhatsApp</a></div></div>
+  <div><h4>Analyst Channel</h4><div class="social"><a href="https://www.youtube.com/@analystchannel">YouTube</a><a href="https://www.tiktok.com/@analystchannel">TikTok</a><a href="https://www.instagram.com/analystchannel">Instagram</a><a href="https://www.facebook.com/AnalystChannel">Facebook</a><a href="https://x.com/AnalystChannel">X</a></div></div>
+ </div>
  <p><b style="color:#fff">Buenavyda</b> · operated by JAGEISSA Global Export and Import Services Inc., Cambridge, Ontario · Antonio Sainz · antonio@buenavyda.ca</p>
  <p>Sales data from the Nayax system in the machine. Commission figures are 10% of gross sales on full months.</p>
 </div></footer>
@@ -235,7 +287,31 @@ if(D.products.length){seg("segProd",prod);prod("prod");}
 (function(){const t=document.getElementById("tInv");let h='<tr><th>What Metamorphosis receives</th><th class="r">Value</th><th>How we valued it</th></tr>';D.inv.forEach(r=>{h+=`<tr><td>${r.item}</td><td class="r num"><b>${fmt$(r.amt)}</b></td><td>${r.how}</td></tr>`});h+=`<tr><td><b>Total value added, at no cost to Metamorphosis</b></td><td class="r num"><b>${fmt$(D.invTotal)}</b></td><td></td></tr>`;t.innerHTML=h;
 const cm=[];let acc=0;D.months.forEach(m=>{acc+=m.total*0.10;cm.push(+acc.toFixed(2))});
 Plotly.newPlot("cInv",[{type:"scatter",mode:"lines+markers+text",x:D.months.map(m=>m.label),y:cm,line:{color:C.green,width:4,shape:"spline"},marker:{size:9,color:C.green},fill:"tozeroy",fillcolor:"rgba(18,122,90,.12)",text:cm.map((v,i)=>i==cm.length-1?fmt$2(D.earned):""),textposition:"top left",textfont:{size:16,color:C.green},hovertemplate:"%{x}: %{y:$,.2f} earned so far<extra></extra>"}],base({margin:{l:60,r:40,t:40,b:48},yaxis:{gridcolor:C.line,tickprefix:"$",range:[0,D.earned*1.2]}}),cfg)})();
-if(D.video){vid.src=D.video;vidWrap.hidden=false}
+(function(){const v=document.getElementById("gv"),b=document.getElementById("gvPlay");b.onclick=()=>{b.remove();v.controls=true;v.play()}})();
+(function(){const cv=document.getElementById("aiCanvas"),x=cv.getContext("2d");const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const cols=["#4C8DFF","#3FD16B","#FFD43B","#F7931A","#FF3B5C","#4C8DFF"];
+const labels=["Buenavyda GrabGo","Analyst Channel","Vending machine","Sales data","Restock lists","Live reports"];
+const imgs={0:"assets/grabgo-mark.svg"};const im={};for(const k in imgs){im[k]=new Image();im[k].src=imgs[k]}
+let W,H,dpr,nodes=[],sparks=[],t0=performance.now();
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+ const R=Math.min(W<520?W*0.30:W*0.40,H*0.40);nodes=labels.map((l,i)=>{const a=-Math.PI/2+i*2*Math.PI/labels.length;return{l,c:cols[i],a,R}})}
+function pos(n,t){const a=n.a+t*0.00004;return[W/2+Math.cos(a)*n.R*1.08,H/2+Math.sin(a)*n.R]}
+function spawn(){const i=Math.floor(Math.random()*nodes.length);sparks.push({i,p:0,v:0.004+Math.random()*0.006,out:Math.random()<0.45})}
+function frame(now){const t=now-t0;x.clearRect(0,0,W,H);const cx=W/2,cy=H/2;
+ nodes.forEach(n=>{const[px,py]=pos(n,t);const g=x.createLinearGradient(cx,cy,px,py);g.addColorStop(0,"rgba(255,255,255,.18)");g.addColorStop(1,n.c+"55");x.strokeStyle=g;x.lineWidth=1.4;x.beginPath();x.moveTo(cx,cy);x.lineTo(px,py);x.stroke()});
+ if(!reduce&&Math.random()<0.35)spawn();
+ sparks=sparks.filter(s=>s.p<1);sparks.forEach(s=>{s.p+=s.v;const n=nodes[s.i];const[px,py]=pos(n,t);const k=s.out?s.p:1-s.p;const sx=px+(cx-px)*(1-k),sy=py+(cy-py)*(1-k);
+  const sxx=s.out?cx+(px-cx)*k:px+(cx-px)*(s.p);const syy=s.out?cy+(py-cy)*k:py+(cy-py)*(s.p);
+  const r=2.2+2*Math.sin(Math.PI*s.p);const gl=x.createRadialGradient(sxx,syy,0,sxx,syy,r*5);gl.addColorStop(0,"#fff");gl.addColorStop(0.25,n.c);gl.addColorStop(1,"transparent");x.fillStyle=gl;x.beginPath();x.arc(sxx,syy,r*5,0,7);x.fill()});
+ const pulse=1+0.06*Math.sin(t/500);const cr=Math.min(W,H)*0.14*pulse;
+ const halo=x.createRadialGradient(cx,cy,cr*0.4,cx,cy,cr*2.4);halo.addColorStop(0,"rgba(76,141,255,.45)");halo.addColorStop(0.5,"rgba(63,209,107,.12)");halo.addColorStop(1,"transparent");x.fillStyle=halo;x.beginPath();x.arc(cx,cy,cr*2.4,0,7);x.fill();
+ const ring=x.createLinearGradient(cx-cr,cy-cr,cx+cr,cy+cr);ring.addColorStop(0,"#4C8DFF");ring.addColorStop(1,"#FF3B5C");x.lineWidth=5;x.strokeStyle=ring;x.fillStyle="#0B0D10";x.beginPath();x.arc(cx,cy,cr,0,7);x.fill();x.stroke();
+ x.fillStyle="#fff";x.font=`800 ${Math.round(cr*0.95)}px "Bricolage Grotesque",system-ui,sans-serif`;x.textAlign="center";x.textBaseline="middle";x.fillText("AI",cx,cy+cr*0.04);
+ nodes.forEach((n,i)=>{const[px,py]=pos(n,t);const nr=Math.max(16,Math.min(W,H)*0.045);x.fillStyle="#0B1729";x.strokeStyle=n.c;x.lineWidth=2.5;x.beginPath();x.arc(px,py,nr,0,7);x.fill();x.stroke();
+  if(im[i]&&im[i].complete){x.drawImage(im[i],px-nr*0.8,py-nr*0.8,nr*1.6,nr*1.6)}else if(i==1){const bw=nr*0.28;[["#FF3B5C",.25],["#FFD43B",0],["#3FD16B",-.3]].forEach((c,j)=>{x.fillStyle=c[0];x.fillRect(px-nr*0.55+j*bw*1.35,py-nr*0.25+c[1]*nr,bw,nr*0.6)})}else{x.fillStyle=n.c;x.beginPath();x.arc(px,py,nr*0.35,0,7);x.fill()}
+  x.fillStyle="#DCE6F2";x.font=`600 ${W<500?11:13}px "IBM Plex Sans",system-ui,sans-serif`;x.textAlign="center";x.textBaseline="top";x.fillText(n.l,px,py+nr+6)});
+ if(!reduce)requestAnimationFrame(frame)}
+size();addEventListener("resize",size);requestAnimationFrame(frame)})();
 const avgComm=D.avgMonthlyComm;
 function wi(){const it=+rIt.value,pr=+rPr.value;oIt.textContent=it;oPr.textContent=fmt$2(pr);const s=it*pr*52/12,c=s*.10;wS.textContent=fmt$(s);wC.textContent=fmt$(c);wY.textContent=fmt$((c+avgComm)*12)}
 rIt.oninput=rPr.oninput=wi;wi();
